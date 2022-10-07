@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <vector>
+#include "Console.h"
 
 using namespace std;
 
@@ -11,7 +12,7 @@ using namespace std;
 #define SHOW 10
 
 int inputNumber(int max, int min);
-void printArray(int* data, int lenght);
+
 void parse(int* data, int number);
 string convert(int number, const char ena, const char pet, const char deset);
 string IntToRoman(int number);
@@ -20,7 +21,6 @@ bool evaluate(string input, vector<int>& vals);
 int reduceZero(int number);
 void compact(vector<int>& data);
 int summarize(vector<int>& data);
-void printVector(vector<int>& vct);
 
 int main()
 {
@@ -36,12 +36,6 @@ int main()
 		bool check = (x == n);
 		cout << "Pass: " << boolalpha << check;
 		cout << endl;
-	}
-}
-
-void printVector(vector<int>& vct) {
-	for (int v : vct) {
-		cout << v << endl;
 	}
 }
 
@@ -242,16 +236,7 @@ void parse(int* data, int number)
 	}
 }
 
-void printArray(int* data, int length)
-{
-	int* p = data;
-	for (int x = 0; x < length; x++)
-	{
-		cout << p << " --> cell[" << x << "]\t= " << *p << endl;
-		p++;
-	}
-	cout << endl;
-}
+
 string convert(int number, const char ena, const char pet, const char deset)
 {
 	if (number == 0) return "";
